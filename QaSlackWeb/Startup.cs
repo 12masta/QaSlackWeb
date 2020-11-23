@@ -30,6 +30,12 @@ namespace QaSlackWeb
                 options.UseSqlite(
                     Configuration.GetConnectionString("DefaultConnection")));
 
+            
+            services.AddDbContext<CosmosDatabaseContext>(options =>
+                options.UseCosmos(Configuration.GetConnectionString("EndpointUri"),
+                    Configuration.GetConnectionString("PrimaryKey"),
+                    "QaSlackDb"));
+            
             services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
