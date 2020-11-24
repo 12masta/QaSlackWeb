@@ -31,6 +31,12 @@ namespace QaSlackWeb.Controllers
         public IEnumerable<SlackMessage> Get()
         {
             _cosmosDatabaseContext.SlackMessage.Load();
+            foreach (var slackMessage in _cosmosDatabaseContext.SlackMessage.Local.ToList())
+            {
+                slackMessage.value = 50;
+                slackMessage.valueColor = "hsl(57, 70%, 50%)";
+                slackMessage.channel_nameColor = "hsl(340, 70%, 50%)";
+            }
             return _cosmosDatabaseContext.SlackMessage.Local.ToList();
         }
     }

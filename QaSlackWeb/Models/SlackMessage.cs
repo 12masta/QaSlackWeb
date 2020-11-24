@@ -19,6 +19,8 @@ namespace QaSlackWeb.Models
         public string response_url { get; set; }
         public string trigger_id { get; set; }
         public string api_app_id { get; set; }
-        
+        public int? value { get; set; }
+        public string? valueColor { get; set; }
+        public string? channel_nameColor { get; set; }
     }
 }

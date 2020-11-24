@@ -11,6 +11,7 @@ import {ApplicationPaths} from './components/api-authorization/ApiAuthorizationC
 import './custom.css'
 import {Dashboard} from "./components/Dashboard";
 import {DashboardCosmos} from "./components/DashboardCosmos";
+import {DashboardCosmosChart} from "./components/DashboardCosmosChart";
 
 export default class App extends Component {
     static displayName = App.name;
@@ -23,6 +24,7 @@ export default class App extends Component {
                 <AuthorizeRoute path='/fetch-data' component={FetchData}/>
                 <Route path='/dashboard' component={Dashboard}/>
                 <Route path='/dashboard-cosmos' component={DashboardCosmos}/>
+                <Route path='/dashboard-cosmos-chart' component={DashboardCosmosChart}/>
 
                 <Route path={ApplicationPaths.ApiAuthorizationPrefix} component={ApiAuthorizationRoutes}/>
             </Layout>
